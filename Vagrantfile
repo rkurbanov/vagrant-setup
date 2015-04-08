@@ -15,7 +15,9 @@ Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
   config.vm.hostname = "web-deb"
 
-  # Disable automatic box update checking. If you disable this, then
+  config.vm.provision "shell", path: "provision.sh"
+
+  # sh automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
   # config.vm.box_check_update = false
