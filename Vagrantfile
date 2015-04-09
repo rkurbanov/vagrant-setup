@@ -14,6 +14,7 @@ Vagrant.configure(2) do |config|
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "ubuntu/trusty64"
   config.vm.hostname = "web-deb"
+  config.vm.network "forwarded_port", guest: 80, host: 8088, id: "nginx"
 
   config.vm.provision "shell", path: "provision.sh"
 
